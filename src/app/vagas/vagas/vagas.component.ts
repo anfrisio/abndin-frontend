@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { VagaService } from '../vaga.service';
+import { Vaga } from '../vaga.model';
 
 @Component({
   selector: 'app-vagas',
@@ -7,6 +8,8 @@ import { VagaService } from '../vaga.service';
   styleUrls: ['./vagas.component.css']
 })
 export class VagasComponent implements OnInit {
+
+  vagas: Vaga[] = [];
 
   constructor(private service: VagaService) { }
 
@@ -16,7 +19,9 @@ export class VagasComponent implements OnInit {
 
   getVagas() {
     this.service.getVagas()
-        .subscribe(resp => console.log(resp));
+        .subscribe(resp => {
+          this.vagas = resp;
+        });
   }
 
 }
