@@ -13,6 +13,23 @@
       "postId": 1
     }
   ],
+  "vagas": [
+    {
+      "id": 1,
+      "descricao": "Desenvolvedor Java",
+      "nivel": 3
+    },
+   {
+      "id": 2,
+      "descricao": "Desenvolvedor Angular",
+      "nivel": 3
+    },
+	   {
+      "id": 3,
+      "descricao": "Full Stack",
+      "nivel": 3
+    }
+  ],  
   "profile": {
 	"id": 1,
     "name": "Anfrisio Bastos dos Santos Neto",
