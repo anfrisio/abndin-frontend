@@ -1,3 +1,4 @@
+import { VagasComponent } from './vagas/vagas/vagas.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { NgModule } from '@angular/core';
@@ -9,6 +10,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'perfil-detail', component: PerfilDetailComponent },
+  { path: 'vagas', component: VagasComponent },
   { path: '', redirectTo: 'login' , pathMatch: 'full' }
 ];
 
