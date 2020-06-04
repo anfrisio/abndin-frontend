@@ -1,9 +1,25 @@
-<p-table [value]="vagas">
+<div class="container">
+    <div class="notification">
+      This container is <strong>centered</strong> on desktop.
+    </div>
+    <h3>Vagas</h3>
+    <p-table 
+        #dt
+        dataKey="id"
+        [value]="vagas" 
+        [rowHover]="true"
+        [rows]="10" 
+        [showCurrentPageReport]="true" 
+        [rowsPerPageOptions]="[10,25,50]" 
+        [paginator]="true"
+        >
     <ng-template pTemplate="header">
         <tr>
             <th>ID</th>
             <th>Descrição</th>
             <th>Nível</th>
+            <th>Início</th>
+            <th>Fim</th>
         </tr>
     </ng-template>
     <ng-template pTemplate="body" let-vaga>
@@ -11,6 +27,11 @@
             <td>{{vaga.id}}</td>
             <td>{{vaga.descricao}}</td>
             <td>{{vaga.nivel}}</td>
+            <td>{{vaga.inicio}}</td>
+            <td>{{vaga.fim}}</td>
         </tr>
     </ng-template>
 </p-table>
+  </div>
+
+
