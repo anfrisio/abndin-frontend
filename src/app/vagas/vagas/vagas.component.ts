@@ -31,9 +31,6 @@ export class VagasComponent implements OnInit {
 
     this.isModalActive = !this.isModalActive;
     this.vaga = new Vaga();
-
-    
-
   }
 
   salvar() {
