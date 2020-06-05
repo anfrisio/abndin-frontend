@@ -1,8 +1,10 @@
 <div class="container">
-    <div class="notification">
-      This container is <strong>centered</strong> on desktop.
+    <div class="content">
+      <h2 class="title is-2">Vagas</h2>
     </div>
-    <h3>Vagas</h3>
+
+    <button (click)="toggleModal()" class="button is-info">Adicionar</button>
+    <br>
     <p-table 
         #dt
         dataKey="id"
@@ -34,4 +36,44 @@
 </p-table>
   </div>
 
+
+  
+  <div class="modal" [ngClass]="{ 'is-active' : isModalActive }">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <p class="modal-card-title">Cadastrar nova Vaga</p>
+        <button class="delete" aria-label="close" (click)="toggleModal()"></button>
+      </header>
+      <section class="modal-card-body">
+        <!-- Content ... -->
+        <div class="field">
+            <label class="label">Descrição</label>
+            <div class="control has-icons-left has-icons-right">
+              <input name="descricao" [(ngModel)]="vaga.descricao" class="input is-success" type="text" placeholder="Descrição">            
+            </div>
+        </div>
+
+        <div class="field">
+            <label class="label">Nível</label>
+            <div class="control">
+              <div  class="select">
+                <select name="nivel" [(ngModel)]="vaga.nivel">
+                  <option  disabled value=null>Selecione o nível</option>
+                  <option value=1>Junior</option>
+                  <option value=2>Pleno</option>
+                  <option value=3>Sênior</option>
+                  <option value=4>Especialista</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+      </section>
+      <footer class="modal-card-foot">
+        <button (click)="salvar()" class="button is-success">Save changes</button>
+        <button (click)="toggleModal()" class="button">Cancel</button>
+      </footer>
+    </div>
+  </div>
 
